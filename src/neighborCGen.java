@@ -5,6 +5,7 @@ public class neighborCGen extends DualPointGen{
 
 	public neighborCGen(){
 		this.reset();
+		currentSteps++;
 	}
 	
 	public String[] nextColors(){ 
@@ -61,7 +62,7 @@ public class neighborCGen extends DualPointGen{
 		}
 
 		currentColors = colors.toArray(new String[colors.size()]);
-		currentSteps = (byte) currentColors.length;
+		currentSteps = (byte) currentColors.length; 	//TODO LIMIT USING STEPS
 		return currentColors;
 	}
 
@@ -70,5 +71,4 @@ public class neighborCGen extends DualPointGen{
 		return true;
 	}
 
-	
 }

@@ -16,23 +16,26 @@ public class TestAlgs {
 		L.setBase(LB);
 		L.setEditable((byte) 1);
 		L.setHarshness(9);
-		L.setSteps((byte) 5);
+		L.setSteps((byte) 3);
 		L.nextColors();
-		System.out.println(L);
+		System.out.println("Linear\n"+L+"\n");
 		
 		pureCGen P = new pureCGen();
-		String PB = "D91348";
+		String PB = "581348";
 		P.setBase(PB);
+		P.setHarshness(6);
 		P.nextColorsR();
-		System.out.println(P);
+		System.out.println("Pure\n"+ P + "\n");
 		
 		shadesCGen S = new shadesCGen();
 		String SB = "D91348";
 		S.setBase(SB);
 		String[] test = S.nextColors();
+		System.out.println("Shades");
 		for (int i = 0; i<test.length; i++){
 			System.out.println(test[i]);
 		}
+		System.out.println();
 
 		
 		/*
@@ -46,17 +49,15 @@ public class TestAlgs {
 		NB[1] = "09879E";
 		N.setBases(NB);
 		N.nextColors();
-		System.out.println(N.toString());
+		System.out.println("Neighbor\n" + N.toString() + "\n");
 		
-//		LWGenBridge B = new LWGenBridge();
-//		String[] BB = new String[2];
-//		B.setSteps((byte) 3);
-//		BB[0] = "E5ABCD";
-//		BB[1] = "19E417";
-//		B.setBases(BB);
-//		
-//		B.nextColors();
-//		
-//		System.out.println(B.toString());
+		bridgeCGen B = new bridgeCGen();
+		String[] BB = new String[2];
+		B.setSteps((byte) 2);
+		BB[0] = "E5ABCD";
+		BB[1] = "19E417";
+		B.setBases(BB);
+		B.nextColors();
+		System.out.println("Bridge\n" + B.toString() + "\n");
 	}
 }

@@ -3,7 +3,9 @@ import java.util.LinkedList;
 
 abstract class Gen {
 	protected LinkedList<String[]> previousColors;
+	protected LinkedList<Byte> previousSteps;//LL Storing all previous step amounts.
 	protected String [] currentColors;
+	protected byte currentSteps;//BYTE Containing current step amount;
 	
 	@Override
 	public String toString() {
@@ -53,4 +55,12 @@ abstract class Gen {
 		String perRGBStr = inColorHex.substring((index-1)*2, (index)*2);
 		return (short)hexToDec(perRGBStr);
 	}
+
+	public boolean setSteps(byte steps){ 
+		if (steps<2)return false;
+		currentSteps = (byte) steps;
+		return true;
+	}
+	
+	public byte getSteps(){return currentSteps;}
 }

@@ -5,10 +5,8 @@ import java.util.Random;
 abstract class SinglePointGen extends Gen{
 	
 	protected String currentBaseColor;//STR Storing the current HEX base.
-	protected byte currentSteps;//BYTE Containing current step amount;
 	protected byte changeableRGB;//BYTE Containing the color set to change r(1)g(2)b(3).
 	protected float harsh;//FLOAT Containing the multiplier for how much currentBaseColor's valRGB will change.
-	protected LinkedList<Byte> previousSteps;//LL Storing all previous step amounts.
 	
 	protected byte calcMost(String inColor) {
 		Short [] rgbSplit = new Short [3];
@@ -94,12 +92,7 @@ abstract class SinglePointGen extends Gen{
 		changeableRGB = calcMost(currentBaseColor);
 		return true;
 	}
-	public boolean setSteps(byte steps){
-		if (steps<2)return false;
-
-		currentSteps = steps;
-		return true;
-	}
+	
 	public boolean setEditable(byte RGB){
 		if (RGB == 1 || RGB == 2 || RGB == 3){
 			changeableRGB = RGB;
@@ -116,7 +109,6 @@ abstract class SinglePointGen extends Gen{
 	}
 	
 	public String getBase(){return currentBaseColor;}
-	public byte getSteps(){return currentSteps;}
-	public byte getChangeable(){return changeableRGB;}
+	public byte getEditable(){return changeableRGB;}
 	public float getHarshness(){return harsh;}
 }

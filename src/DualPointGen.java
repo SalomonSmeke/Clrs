@@ -5,10 +5,10 @@ abstract class DualPointGen extends Gen{
 
 	protected String currentBaseColor1;//STR Storing the current HEX1 base.
 	protected String currentBaseColor2;//STR Storing the current HEX2 base.
-	protected byte currentSteps;//BYTE Containing current step amount;
 	
 	public void reset(){
 		previousColors = new LinkedList<String[]>();
+		previousSteps = new LinkedList<Byte>();
 		currentColors = null;
 		currentBaseColor1 = "aa56ff";
 		currentBaseColor2 = "ba59dd";
@@ -46,5 +46,10 @@ abstract class DualPointGen extends Gen{
 	
 	public byte getSteps(){return currentSteps;}
 	
-	
+	@Override
+	public boolean setSteps(byte steps){ 
+		super.setSteps(steps);
+		currentSteps = (byte) (currentSteps+1);
+		return true;
+	}
 }

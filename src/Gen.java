@@ -7,6 +7,7 @@ abstract class Gen {
 	
 	@Override
 	public String toString() {
+		if (currentColors == null) return null;
 		String cat = "";
 		for (int i = 0; i < currentColors.length; i++){
 			cat+=currentColors[i]+'\n';

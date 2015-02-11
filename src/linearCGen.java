@@ -38,14 +38,4 @@ public class linearCGen extends SinglePointGen{
 		previousSteps.add(currentSteps);
 		return currentColors;
 	}
-	
-	private short[] calcIntervalsR(short input) {
-		short [] out = new short[currentSteps];
-		
-		int mod = 255-input;
-
-		for (int i = 0; i < currentSteps; i++) out[i]=(short)(input+((mod*harsh)/(currentSteps-1)*i));
-
-		return out;
-	}
 }

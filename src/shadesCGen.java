@@ -1,5 +1,11 @@
 
 public class shadesCGen extends SinglePointGen {
+	
+	
+	public shadesCGen(){
+		this.reset();
+	}
+	
 	public String[] nextColors(){ 
 		if (currentColors != null)previousColors.add(currentColors);
 		

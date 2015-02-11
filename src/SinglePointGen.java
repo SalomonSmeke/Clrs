@@ -68,6 +68,16 @@ abstract class SinglePointGen extends Gen{
 		return out;
 	}
 	
+	protected short[] calcIntervalsR(short input) {
+		short [] out = new short[currentSteps];
+		
+		int mod = 255-input;
+
+		for (int i = 0; i < currentSteps; i++) out[i]=(short)(input+((mod*harsh)/(currentSteps-1)*i));
+
+		return out;
+	}
+	
 	public boolean setBase(String HEX){
 		HEX = HEX.trim();
 		if (HEX.length()!=6)return false;
@@ -104,7 +114,7 @@ abstract class SinglePointGen extends Gen{
 		harsh = harshness;
 		return true;
 	}
-
+	
 	public String getBase(){return currentBaseColor;}
 	public byte getSteps(){return currentSteps;}
 	public byte getChangeable(){return changeableRGB;}

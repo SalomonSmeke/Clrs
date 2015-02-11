@@ -89,10 +89,13 @@ neighboars, takes two colors. and generates colors around them that have the sam
 **WARNING neighbors is DANGEROUS as of now. it generates as many colors as it needs to reach illegal values on both ends. Input numbers such as [ffffff]and[fffffe] and you will get 255 intervals.
 
 ####Other things:
-You should look at the code, because things are more detailed there... but.
-Each of these keeps a record of colors they have made. You can access them individually, or all of them.
-Each of these has an overriden .toString. Printing the variable name will print the colors.
-You may use this for whatever you like, provided you:
-a) link to a website that implements this: www.placeholder.com (ill update this later)
-b) somewhere in your source (perhaps when you instantiate this) include a comment //Color generation by Salomon Smeke. A cool dude.
-c) if you are releasing the program using this publicly. Credit me somewhere? Doesnt matter where.
+You should look at the code, because things are more detailed there... but.<br>
+Each of these keeps a record of colors they have made. You can access them individually, or all of them.<br>
+Each of these has an overriden .toString. Printing the variable name will print the colors.<br>
+You may use this for whatever you like, provided you:<br>
+a) link to a website that implements this: www.placeholder.com (ill update this later)<br>
+b) somewhere in your source (perhaps when you instantiate this) include a comment //Color generation by Salomon Smeke. A cool dude.<br>
+c) if you are releasing the program using this publicly. Credit me somewhere? Doesnt matter where.<br>
+
+####Final thought:
+This is definitely not a great thing. Its super rudimentary code, from this super-rudimentary novice. but it makes pretty cool colors. Id love pointers, etc. Feel free to fork the heck out of it.

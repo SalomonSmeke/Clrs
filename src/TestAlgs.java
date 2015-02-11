@@ -40,16 +40,14 @@ public class TestAlgs {
 		 */
 		
 		
+		neighborCGen N = new neighborCGen();
+		String[] NB = new String[2];
+		NB[0] = "1CA6B0";
+		NB[1] = "09879E";
+		N.setBases(NB);
+		N.nextColors();
+		System.out.println(N.toString());
 		
-//		LWGenNeighbors N = new LWGenNeighbors();
-//		String[] NB = new String[2];
-//		NB[0] = "1CA6B0";
-//		NB[1] = "09879E";
-//		N.setNeighbors(NB);
-//		
-//		N.nextColors();
-//		
-//		System.out.println(N.toString());		
 //		LWGenBridge B = new LWGenBridge();
 //		String[] BB = new String[2];
 //		B.setSteps((byte) 3);

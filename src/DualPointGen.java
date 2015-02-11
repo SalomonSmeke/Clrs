@@ -20,6 +20,7 @@ abstract class DualPointGen extends Gen{
 		HEX[0] = HEX[0].trim();
 		HEX[1] = HEX[1].trim();
 		if (HEX[0].length()!=6 || HEX[1].length()!=6)return false;
+		if (HEX[0] == HEX[1])return false;
 		try
 		{
 			@SuppressWarnings("unused")

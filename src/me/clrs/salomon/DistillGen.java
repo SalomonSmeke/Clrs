@@ -4,28 +4,27 @@ public class DistillGen extends onePointGen {
 	
 	public String nextColors() {
 		generatedColors.clear();
-		
 		int one = 0;
 		int two = 0;
-
+		//Selecting which colors are edited based on the pivot
 		switch (pivot){
 		case (0):
-			one = 1;
-			two = 2;
+			one = 1; //g
+			two = 2; //b
+			break;
 		case (1):
-			one = 0;
-			two = 2;
+			one = 0; //r
+			two = 2; //b
+			break;
 		case (2):
-			one = 0;
-			two = 1;
+			one = 0; //r
+			two = 1; //g
+			break;
 		default:
 		}
 		
-		int []clrs = new int[steps];
-		int []clrs2 = new int[steps];
-		
-		clrs = intervals(base[one]);
-		clrs2 = intervals(base[two]);
+		int []clrs = intervals(base[one]);
+		int []clrs2 = intervals(base[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
@@ -40,17 +39,14 @@ public class DistillGen extends onePointGen {
 				break;
 			default:
 			}
-			
 		}
 		return toString();
 	}
 	
 	public String nextColorsR() {
 		generatedColors.clear();
-		
 		int one = 0;
 		int two = 0;
-
 		switch (pivot){
 		case (0):
 			one = 1;
@@ -64,11 +60,8 @@ public class DistillGen extends onePointGen {
 		default:
 		}
 		
-		int []clrs = new int[steps];
-		int []clrs2 = new int[steps];
-		
-		clrs = intervalsR(base[one]);
-		clrs2 = intervalsR(base[two]);
+		int []clrs = intervalsR(base[one]);
+		int []clrs2 = intervalsR(base[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
@@ -83,7 +76,6 @@ public class DistillGen extends onePointGen {
 				break;
 			default:
 			}
-			
 		}
 		return toString();
 	}

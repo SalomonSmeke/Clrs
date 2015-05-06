@@ -4,9 +4,8 @@ public class LinearGen extends onePointGen {
 
 	public String nextColors() {
 		generatedColors.clear();
-		
-		int []clrs = new int[steps];
-		clrs = intervals(base[pivot]);
+		//Create an interval on the pivot
+		int []clrs = intervals(base[pivot]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
@@ -21,7 +20,6 @@ public class LinearGen extends onePointGen {
 				break;
 			default:
 			}
-			
 		}
 		return toString();
 	}
@@ -29,8 +27,7 @@ public class LinearGen extends onePointGen {
 	public String nextColorsR() {
 		generatedColors.clear();
 		
-		int []clrs = new int[steps];
-		clrs = intervalsR(base[pivot]);
+		int []clrs = intervalsR(base[pivot]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
@@ -45,7 +42,6 @@ public class LinearGen extends onePointGen {
 				break;
 			default:
 			}
-			
 		}
 		return toString();
 	}

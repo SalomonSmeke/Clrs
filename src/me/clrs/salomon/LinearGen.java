@@ -6,18 +6,18 @@ public class LinearGen extends onePointGen {
 		generatedColors.clear();
 		
 		int []clrs = new int[steps];
-		clrs = intervals(rgb[pivot]);
+		clrs = intervals(base[pivot]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement(new int []{clrs[i],rgb[1],rgb[2]});
+				generatedColors.addElement(new int []{clrs[i],base[1],base[2]});
 				break;
 			case (1):
-				generatedColors.addElement(new int []{rgb[0],clrs[i],rgb[2]});
+				generatedColors.addElement(new int []{base[0],clrs[i],base[2]});
 				break;
 			case (2):
-				generatedColors.addElement(new int []{rgb[0],rgb[1],clrs[i]});
+				generatedColors.addElement(new int []{base[0],base[1],clrs[i]});
 				break;
 			default:
 			}
@@ -30,18 +30,18 @@ public class LinearGen extends onePointGen {
 		generatedColors.clear();
 		
 		int []clrs = new int[steps];
-		clrs = intervalsR(rgb[pivot]);
+		clrs = intervalsR(base[pivot]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement(new int []{clrs[i],rgb[1],rgb[2]});
+				generatedColors.addElement(new int []{clrs[i],base[1],base[2]});
 				break;
 			case (1):
-				generatedColors.addElement(new int []{rgb[0],clrs[i],rgb[2]});
+				generatedColors.addElement(new int []{base[0],clrs[i],base[2]});
 				break;
 			case (2):
-				generatedColors.addElement(new int []{rgb[0],rgb[1],clrs[i]});
+				generatedColors.addElement(new int []{base[0],base[1],clrs[i]});
 				break;
 			default:
 			}

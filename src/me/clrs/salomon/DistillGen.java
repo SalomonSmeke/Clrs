@@ -24,19 +24,19 @@ public class DistillGen extends onePointGen {
 		int []clrs = new int[steps];
 		int []clrs2 = new int[steps];
 		
-		clrs = intervals(rgb[one]);
-		clrs2 = intervals(rgb[two]);
+		clrs = intervals(base[one]);
+		clrs2 = intervals(base[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement(new int []{rgb[0],clrs[i],clrs2[i]});
+				generatedColors.addElement(new int []{base[0],clrs[i],clrs2[i]});
 				break;
 			case (1):
-				generatedColors.addElement(new int []{clrs[i],rgb[1],clrs2[i]});
+				generatedColors.addElement(new int []{clrs[i],base[1],clrs2[i]});
 				break;
 			case (2):
-				generatedColors.addElement(new int []{clrs[i],clrs2[i],rgb[2]});
+				generatedColors.addElement(new int []{clrs[i],clrs2[i],base[2]});
 				break;
 			default:
 			}
@@ -67,19 +67,19 @@ public class DistillGen extends onePointGen {
 		int []clrs = new int[steps];
 		int []clrs2 = new int[steps];
 		
-		clrs = intervalsR(rgb[one]);
-		clrs2 = intervalsR(rgb[two]);
+		clrs = intervalsR(base[one]);
+		clrs2 = intervalsR(base[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement(new int []{rgb[0],clrs[i],clrs2[i]});
+				generatedColors.addElement(new int []{base[0],clrs[i],clrs2[i]});
 				break;
 			case (1):
-				generatedColors.addElement(new int []{clrs[i],rgb[1],clrs2[i]});
+				generatedColors.addElement(new int []{clrs[i],base[1],clrs2[i]});
 				break;
 			case (2):
-				generatedColors.addElement(new int []{clrs[i],clrs2[i],rgb[2]});
+				generatedColors.addElement(new int []{clrs[i],clrs2[i],base[2]});
 				break;
 			default:
 			}

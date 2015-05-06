@@ -71,6 +71,7 @@ abstract class twoPointGen implements CGen{
 		return false;
 	}
 
+	public Vector<int []> getGenerated(){return generatedColors;}
 	public String []getBases(){return new String[]{intsToColor(rgb0),intsToColor(rgb1)};}
 	public int getSteps(){return steps;}
 	public int getStrength(){return strength;}

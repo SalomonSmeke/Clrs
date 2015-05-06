@@ -33,7 +33,7 @@ public class TestAlgs {
 
 		BridgeGen B = new BridgeGen();
 		String[] BB = new String[2];
-		B.setSteps(200);
+		B.setSteps(255);
 		BB[0] = "5ED49D";
 		BB[1] = "F567C3";
 		B.setBases(BB);

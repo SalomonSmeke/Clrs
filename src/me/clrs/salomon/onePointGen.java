@@ -87,6 +87,7 @@ abstract class onePointGen implements CGen{
 		return false;
 	}
 
+	public Vector<int []> getGenerated(){return generatedColors;}
 	public String getBase(){return intsToColor(rgb);}
 	public int getSteps(){return steps;}
 	public int getStrength(){return strength;}

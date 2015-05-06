@@ -1,7 +1,7 @@
 package me.clrs.salomon;
 
 public class DistillGen extends onePointGen {
-	
+
 	public String nextColors() {
 		generatedColors.clear();
 		int one = 0;
@@ -10,19 +10,19 @@ public class DistillGen extends onePointGen {
 		switch (pivot){
 		case (0):
 			one = 1; //g
-			two = 2; //b
-			break;
+		two = 2; //b
+		break;
 		case (1):
 			one = 0; //r
-			two = 2; //b
-			break;
+		two = 2; //b
+		break;
 		case (2):
 			one = 0; //r
-			two = 1; //g
-			break;
+		two = 1; //g
+		break;
 		default:
 		}
-		
+
 		int []clrs = intervals(base[one]);
 		int []clrs2 = intervals(base[two]);
 
@@ -30,19 +30,19 @@ public class DistillGen extends onePointGen {
 			switch (pivot){
 			case (0):
 				generatedColors.addElement(new int []{base[0],clrs[i],clrs2[i]});
-				break;
+			break;
 			case (1):
 				generatedColors.addElement(new int []{clrs[i],base[1],clrs2[i]});
-				break;
+			break;
 			case (2):
 				generatedColors.addElement(new int []{clrs[i],clrs2[i],base[2]});
-				break;
+			break;
 			default:
 			}
 		}
 		return toString();
 	}
-	
+
 	public String nextColorsR() {
 		generatedColors.clear();
 		int one = 0;
@@ -50,16 +50,16 @@ public class DistillGen extends onePointGen {
 		switch (pivot){
 		case (0):
 			one = 1;
-			two = 2;
+		two = 2;
 		case (1):
 			one = 0;
-			two = 2;
+		two = 2;
 		case (2):
 			one = 0;
-			two = 1;
+		two = 1;
 		default:
 		}
-		
+
 		int []clrs = intervalsR(base[one]);
 		int []clrs2 = intervalsR(base[two]);
 
@@ -67,13 +67,13 @@ public class DistillGen extends onePointGen {
 			switch (pivot){
 			case (0):
 				generatedColors.addElement(new int []{base[0],clrs[i],clrs2[i]});
-				break;
+			break;
 			case (1):
 				generatedColors.addElement(new int []{clrs[i],base[1],clrs2[i]});
-				break;
+			break;
 			case (2):
 				generatedColors.addElement(new int []{clrs[i],clrs2[i],base[2]});
-				break;
+			break;
 			default:
 			}
 		}

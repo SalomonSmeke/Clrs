@@ -14,9 +14,8 @@ abstract class twoPointGen implements CGen{
 	//Parameters
 	protected int steps = 2;
 	protected int strength = 100;
-	
+
 	//Setting/Getting parameters
-	
 	public boolean setBases(String [] hex){
 		if (hex.length!=2){
 			return false;
@@ -47,7 +46,7 @@ abstract class twoPointGen implements CGen{
 	public String []getBases(){return new String[]{intsToColor(base0),intsToColor(base1)};}
 	public int getSteps(){return steps;}
 	public int getStrength(){return strength;}
-	
+
 	//Utilities
 	@Override
 	public String toString(){
@@ -66,7 +65,7 @@ abstract class twoPointGen implements CGen{
 		steps = 2;
 		strength = 100;
 	}
-	
+
 	//Helpers (internal use)
 	protected int[] intervals(int in, int min){
 		int[] out = new int[steps];

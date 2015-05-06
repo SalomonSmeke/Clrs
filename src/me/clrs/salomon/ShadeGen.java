@@ -14,10 +14,10 @@ public class ShadeGen extends onePointGen{
 		}
 		return toString();
 	}
-	
+
 	public String nextColorsR() {
 		generatedColors.clear();
-		
+
 		int []clrs0 = intervals(base[0]);
 		int []clrs1 = intervals(base[1]);
 		int []clrs2 = intervals(base[2]);

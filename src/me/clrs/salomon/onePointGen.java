@@ -14,7 +14,7 @@ abstract class onePointGen implements CGen{
 	protected int steps = 2;
 	protected int strength = 100;
 	protected int pivot = 0;
-	
+
 	//Setting/Getting parameters
 	public boolean setBase(String hex){
 		if (hex.length() == 6){
@@ -51,7 +51,7 @@ abstract class onePointGen implements CGen{
 		}
 		return false;
 	}
-	
+
 	public Vector<int []> getGenerated(){return generatedColors;}
 	public String getBase(){return intsToColor(base);}
 	public int getSteps(){return steps;}
@@ -76,7 +76,7 @@ abstract class onePointGen implements CGen{
 		strength = 100;
 		pivot = 0;
 	}
-	
+
 	//Helpers (internal use)
 	protected int[] intervals(int in){
 		int[] out = new int[steps];

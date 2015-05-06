@@ -11,35 +11,35 @@ public class LinearGen extends onePointGen {
 			switch (pivot){
 			case (0):
 				generatedColors.addElement(new int []{clrs[i],base[1],base[2]});
-				break;
+			break;
 			case (1):
 				generatedColors.addElement(new int []{base[0],clrs[i],base[2]});
-				break;
+			break;
 			case (2):
 				generatedColors.addElement(new int []{base[0],base[1],clrs[i]});
-				break;
+			break;
 			default:
 			}
 		}
 		return toString();
 	}
-	
+
 	public String nextColorsR() {
 		generatedColors.clear();
-		
+
 		int []clrs = intervalsR(base[pivot]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
 				generatedColors.addElement(new int []{clrs[i],base[1],base[2]});
-				break;
+			break;
 			case (1):
 				generatedColors.addElement(new int []{base[0],clrs[i],base[2]});
-				break;
+			break;
 			case (2):
 				generatedColors.addElement(new int []{base[0],base[1],clrs[i]});
-				break;
+			break;
 			default:
 			}
 		}

@@ -3,11 +3,11 @@ package me.clrs.salomon;
 import java.util.Vector;
 //Functionality that all generators must have
 public interface CGen {
-	
+
 	//Getters & Setters
 	public boolean setSteps(int s);
 	public Vector<int []> getGenerated();
-	
+
 	//Utilities
 	@Override
 	public String toString();
@@ -17,7 +17,7 @@ public interface CGen {
 	//Helpers (internal use)
 	default int[] colorToInts(String hex){
 		int [] out = new int[3];
-		
+
 		for (int i = 0; i < 3; i++){
 			out[i] = toInt(hex.substring(2*i, 2*(i+1)));
 		}
@@ -31,7 +31,7 @@ public interface CGen {
 		return out;
 	}
 	default int toInt(String hex){
-		  return Integer.parseInt(hex, 16);  
+		return Integer.parseInt(hex, 16);  
 	}
 	default String toHex(int decimal, int minLength){
 		String out = Integer.toHexString(decimal);

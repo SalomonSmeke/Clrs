@@ -18,20 +18,17 @@ abstract class twoPointGen implements CGen{
 	protected int[] intervals(int in, int min){
 		int[] out = new int[steps];
 		int delta = in-min;
-		for (int i = 0; i < steps; i++) out[i] = in - ((delta*strength/100)/steps)*i;
+		for (int i = 0; i < steps; i++) out[i] = (int) (in - ((delta*strength/100.0)/(steps-1))*i);
 		return out;
 	}
 	
 	@Override
 	public String toString(){
 		String out = "";
-		int [] temp;
+		String temp;
 		for (int i = 0; i < generatedColors.size(); i++){
-			temp = generatedColors.get(i);
-			for (int j = 0; j < rgb0.length; j++){
-				out += temp[j];
-			}
-			out += '\n';
+			temp = intsToColor(generatedColors.get(i));
+			out += temp + '\n';
 		}
 		return out;
 	}

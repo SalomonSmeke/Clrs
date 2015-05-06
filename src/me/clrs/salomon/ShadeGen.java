@@ -14,7 +14,7 @@ public class ShadeGen extends onePointGen{
 		clrs2 = intervals(rgb[2]);
 
 		for (int i = 0; i < steps; i++){
-			generatedColors.add(new int[]{clrs0[i],clrs1[i],clrs2[2]});
+			generatedColors.add(new int[]{clrs0[i],clrs1[i],clrs2[i]});
 		}
 		return toString();
 	}
@@ -31,7 +31,7 @@ public class ShadeGen extends onePointGen{
 		clrs2 = intervalsR(rgb[2]);
 
 		for (int i = 0; i < steps; i++){
-			generatedColors.add(new int[]{clrs0[i],clrs1[i],clrs2[2]});
+			generatedColors.add(new int[]{clrs0[i],clrs1[i],clrs2[i]});
 		}
 		return toString();
 	}

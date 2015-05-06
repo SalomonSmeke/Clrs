@@ -15,7 +15,6 @@ public interface CGen {
 		
 		for (int i = 0; i < 3; i++){
 			out[i] = toInt(hex.substring(2*i, 2*(i+1)));
-			System.out.println(out[i]);
 		}
 		return out;
 	}

@@ -24,8 +24,8 @@ public class DistillGen extends onePointGen {
 		int []clrs = new int[steps];
 		int []clrs2 = new int[steps];
 		
-		clrs = intervalsR(rgb[one]);
-		clrs2 = intervalsR(rgb[two]);
+		clrs = intervals(rgb[one]);
+		clrs2 = intervals(rgb[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){
@@ -67,8 +67,8 @@ public class DistillGen extends onePointGen {
 		int []clrs = new int[steps];
 		int []clrs2 = new int[steps];
 		
-		clrs = intervals(rgb[one]);
-		clrs2 = intervals(rgb[two]);
+		clrs = intervalsR(rgb[one]);
+		clrs2 = intervalsR(rgb[two]);
 
 		for (int i = 0; i < steps; i++){
 			switch (pivot){

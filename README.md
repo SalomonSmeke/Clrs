@@ -86,6 +86,8 @@ bridge, takes two colors. and generates colors between them using their differen
 You should look at the code, because things are more detailed there... but.<br>
 Each of these keeps a record of colors they have made. You can access them individually, or all of them.<br>
 Each of these has an overridden .toString. Printing the variable name will print the colors.<br>
+There are now JavaScript versions in the JS folder. They work a little differently. Just give them a look.
+C++, C, Python, ? coming soon.
 You may use this for whatever you like, provided you:<br>
 a) link to a website that implements this: www.placeholder.com (ill update this later)<br>
 b) somewhere in your source (perhaps when you instantiate this) include a comment //Color generation by Salomon Smeke. A cool dude.<br>

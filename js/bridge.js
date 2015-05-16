@@ -9,45 +9,45 @@
 	function LWGenBridge() {
 	}
 
-	LWGenBridge.prototype.setBases = function(hex) {
+	LWGenBridge.prototype.setBasesBridge = function(hex) {
 		if (hex.length!=2){
 			return false;
 		}
-		if (hex[0].length() == 6 && hex[1].length() == 6){
+		if (hex[0].length == 6 && hex[1].length == 6){
 			base0 = colorToInts(hex[0]);
 			base1 = colorToInts(hex[1]);
 			return true;
 		}
 		return false;
 	};
-	LWGenBridge.prototype.setSteps = function(s) {
+	LWGenBridge.prototype.setStepsBridge = function(s) {
 		if (s>=2 && s<256){
 			steps = s;
 			return true;
 		}
 		return false;
 	};
-	LWGenBridge.prototype.setStrength = function(s) {
+	LWGenBridge.prototype.setStrengthBridge = function(s) {
 		if (s <= 100 && s >= 0){
 			strength = s;
 			return true;
 		}
 		return false;
 	};
-	LWGenBridge.prototype.getGenerated = function() {
+	LWGenBridge.prototype.getGeneratedBridge = function() {
 		return generatedColors;
 	};
-	LWGenBridge.prototype.getBases = function() {
+	LWGenBridge.prototype.getBasesBridge = function() {
 		return [intsToColor(base0),intsToColor(base1)];
 	};
-	LWGenBridge.prototype.getSteps = function() {
+	LWGenBridge.prototype.getStepsBridge = function() {
 		return steps;
 	};
-	LWGenBridge.prototype.getStrength = function() {
+	LWGenBridge.prototype.getStrengthBridge = function() {
 		return strength;
 	};
 
-	LWGenBridge.prototype.clear = function() {
+	LWGenBridge.prototype.clearBridge = function() {
 		generatedColors = [];
 		base0 = [255,255,255];
 		base1 = [255,255,255];
@@ -55,7 +55,7 @@
 		strength = 100;
 	};
 
-	function intervals(input, min) {
+	function intervalsBridge(input, min) {
 		var out = [];
 		var delta = input-min;
 		for (var i = 0; i < steps; i++) out[i] = (input - ((delta*strength/100.0)/(steps-1))*i);
@@ -65,12 +65,12 @@
 	LWGenBridge.prototype.bridge = function(input) {
 		generatedColors = [];
 
-		var clrs0 = intervals(base0[0],base1[0]); //r interval between one base and the other
-		var clrs1 = intervals(base0[1],base1[1]); //g ""
-		var	clrs2 = intervals(base0[2],base1[2]); //b ""
+		var clrs0 = intervalsBridge(base0[0],base1[0]); //r interval between one base and the other
+		var clrs1 = intervalsBridge(base0[1],base1[1]); //g ""
+		var	clrs2 = intervalsBridge(base0[2],base1[2]); //b ""
 
 		for (var i = 0; i < steps; i++){
-			generatedColors.addElement([clrs0[i],clrs1[i],clrs2[i]]);
+			generatedColors [i] = intsToColor(clrs0[i],clrs1[i],clrs2[i]);
 		}
 		return toString();
 	};
@@ -94,8 +94,9 @@
 	}
 	function toHex(decimal, minLength) {
 		var out = decimal.toString(16);
-		while (out.length()<minLength){
+		while (out.length<minLength){
 			out = "0" + out;
 		}
 		return out;
 	}
+	

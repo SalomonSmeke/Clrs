@@ -10,7 +10,7 @@
 	}
 	
 	LWGenPallete.prototype.setBase = function(hex) {
-		if (hex.length() == 6){
+		if (hex.length == 6){
 		var big = 0;
 		base = colorToInts(hex);
 		for (var i = 0; i < base.length; i++){
@@ -79,7 +79,7 @@
 	
 	function intervals(input) {
 		var out = [];
-		for (var i = 0; i < steps; i++) out[i] = (input - ((input*strength/100.0)/(steps-1))*i);
+		for (var i = 0; i < steps; i++) out[i] = Math.round(input - ((input*strength/100.0)/(steps-1))*i);
 		return out;
 	}
 	function intervalsR(input) {
@@ -88,40 +88,40 @@
 		return out;
 	}
 	
-	LWGenPallete.prototype.linear = function(input) {
+	LWGenPallete.prototype.linear = function() {
 		generatedColors = [];
 		var clrs = intervals(base[pivot]);
 
 		for (var i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement([clrs[i],base[1],base[2]]);
+				generatedColors[i] = (intsToColor([clrs[i],base[1],base[2]]));
 			break;
 			case (1):
-				generatedColors.addElement([base[0],clrs[i],base[2]]);
+				generatedColors[i] = (intsToColor([base[0],clrs[i],base[2]]));
 			break;
 			case (2):
-				generatedColors.addElement([base[0],base[1],clrs[i]]);
+				generatedColors[i] = (intsToColor([base[0],base[1],clrs[i]]));
 			break;
 			default:
 			}
 		}
 		return toString();
 	};
-	LWGenPallete.prototype.linearR = function(input) {
+	LWGenPallete.prototype.linearR = function() {
 		generatedColors = [];
 		var clrs = intervalsR(base[pivot]);
 
 		for (var i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement([clrs[i],base[1],base[2]]);
+				generatedColors[i] = (intsToColor([clrs[i],base[1],base[2]]));
 			break;
 			case (1):
-				generatedColors.addElement([base[0],clrs[i],base[2]]);
+				generatedColors[i] = (intsToColor([base[0],clrs[i],base[2]]));
 			break;
 			case (2):
-				generatedColors.addElement([base[0],base[1],clrs[i]]);
+				generatedColors[i] = (intsToColor([base[0],base[1],clrs[i]]));
 			break;
 			default:
 			}
@@ -154,13 +154,13 @@
 		for (var i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement([base[0],clrs[i],clrs2[i]]);
+				generatedColors [i] = (intsToColor([base[0],clrs[i],clrs2[i]]));
 			break;
 			case (1):
-				generatedColors.addElement([clrs[i],base[1],clrs2[i]]);
+				generatedColors [i] = (intsToColor([clrs[i],base[1],clrs2[i]]));
 			break;
 			case (2):
-				generatedColors.addElement([clrs[i],clrs2[i],base[2]]);
+				generatedColors [i] = (intsToColor([clrs[i],clrs2[i],base[2]]));
 			break;
 			default:
 			}
@@ -193,13 +193,13 @@
 		for (var i = 0; i < steps; i++){
 			switch (pivot){
 			case (0):
-				generatedColors.addElement([base[0],clrs[i],clrs2[i]]);
+				generatedColors [i] = (intsToColor([base[0],clrs[i],clrs2[i]]));
 			break;
 			case (1):
-				generatedColors.addElement([clrs[i],base[1],clrs2[i]]);
+				generatedColors [i] = (intsToColor([clrs[i],base[1],clrs2[i]]));
 			break;
 			case (2):
-				generatedColors.addElement([clrs[i],clrs2[i],base[2]]);
+				generatedColors [i] = (intsToColor([clrs[i],clrs2[i],base[2]]));
 			break;
 			default:
 			}
@@ -214,7 +214,7 @@
 		var clrs2 = intervals(base[2]);
 
 		for (var i = 0; i < steps; i++){
-			generatedColors.add([clrs0[i],clrs1[i],clrs2[i]]);
+			generatedColors [i] = (intsToColor([clrs0[i],clrs1[i],clrs2[i]]));
 		}
 		return toString();
 	};
@@ -226,7 +226,7 @@
 		var clrs2 = intervalsR(base[2]);
 
 		for (var i = 0; i < steps; i++){
-			generatedColors.add([clrs0[i],clrs1[i],clrs2[i]]);
+			generatedColors [i] = (intsToColor([clrs0[i],clrs1[i],clrs2[i]]));
 		}
 		return toString();
 	};
@@ -250,7 +250,7 @@
 	}
 	function toHex(decimal, minLength) {
 		var out = decimal.toString(16);
-		while (out.length()<minLength){
+		while (out.length<minLength){
 			out = "0" + out;
 		}
 		return out;

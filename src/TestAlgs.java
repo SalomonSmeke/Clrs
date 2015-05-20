@@ -8,11 +8,11 @@ public class TestAlgs {
 	public static void main(String[] args) {
 
 		LinearGen L = new LinearGen();
-		String LB = "FF6464";
+		String LB = "774565";
 		L.setBase(LB);
 		L.setPivot(3);
-		L.setStrength(100);
-		L.setSteps(5);
+		L.setStrength(50);
+		L.setSteps(3);
 		L.nextColors();
 		System.out.println("Linear\n" + L);
 		

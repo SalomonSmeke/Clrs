@@ -89,7 +89,7 @@ Each of these has an overridden .toString. Printing the variable name will print
 There are now JavaScript versions in the JS folder. They work a little differently. Just give them a look.
 C++, C, Python, ? coming soon.
 You may use this for whatever you like, provided you:<br>
-a) link to a website that implements this: www.placeholder.com (ill update this later)<br>
+a) link to a website that implements this: ssmeke.io (ill update this later)<br>
 b) somewhere in your source (perhaps when you instantiate this) include a comment //Color generation by Salomon Smeke. A cool dude.<br>
 c) if you are releasing the program using this publicly. Credit me somewhere? Doesn't matter where.<br>
 

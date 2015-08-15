@@ -1,4 +1,4 @@
-# ColorGenAPI
+# Clrs
 A palette generation device :O
 ####What the f*** is this?
 Glad you asked, this thing makes colors.

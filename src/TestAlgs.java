@@ -8,11 +8,11 @@ public class TestAlgs {
 	public static void main(String[] args) {
 
 		LinearGen L = new LinearGen();
-		String LB = "774565";
+		String LB = "ff47a0";
 		L.setBase(LB);
-		L.setPivot(3);
-		L.setStrength(50);
-		L.setSteps(3);
+		L.setPivot(2);
+		L.setStrength(60);
+		L.setSteps(4);
 		L.nextColors();
 		System.out.println("Linear\n" + L);
 		
@@ -24,7 +24,7 @@ public class TestAlgs {
 		System.out.println("Distill\n" + D);
 
 		ShadeGen S = new ShadeGen();
-		String SB = "D12236";
+		String SB = "ff9090";
 		S.setBase(SB);
 		S.setStrength(9);
 		String test = S.nextColors();
@@ -33,9 +33,9 @@ public class TestAlgs {
 
 		BridgeGen B = new BridgeGen();
 		String[] BB = new String[2];
-		B.setSteps(255);
-		BB[0] = "5ED49D";
-		BB[1] = "F567C3";
+		B.setSteps(7);
+		BB[0] = "CB4226";
+		BB[1] = "1D616D";
 		B.setBases(BB);
 		B.nextColors();
 		System.out.println("Bridge\n" + B.toString());

@@ -23,6 +23,7 @@ abstract class twoPointGen implements CGen{
 		if (hex[0].length() == 6 && hex[1].length() == 6){
 			base0 = colorToInts(hex[0]);
 			base1 = colorToInts(hex[1]);
+			if (base0==null || base1==null) return false;
 			return true;
 		}
 		return false;

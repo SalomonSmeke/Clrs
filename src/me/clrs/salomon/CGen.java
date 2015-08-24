@@ -17,7 +17,14 @@ public interface CGen {
 	//Helpers (internal use)
 	default int[] colorToInts(String hex){
 		int [] out = new int[3];
-
+		
+		hex=hex.toLowerCase();
+		
+		for (int i = 0; i < 6; i++){
+			char temp = hex.charAt(i);
+			if ((temp>'f' || temp<'a') && (temp<'0' || temp>'9')) return null;
+		}
+		
 		for (int i = 0; i < 3; i++){
 			out[i] = toInt(hex.substring(2*i, 2*(i+1)));
 		}

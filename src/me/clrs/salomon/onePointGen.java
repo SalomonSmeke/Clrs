@@ -20,7 +20,10 @@ abstract class onePointGen implements CGen{
 		if (hex.length() == 6){
 			int big = 0;
 			base = colorToInts(hex);
-			if (base == null) return false;
+			if (base == null) {
+				 base = new int[]{255,255,255};
+				return false;
+			}
 			for (int i = 0; i < base.length; i++){
 				if (base[i]>big){
 					big = base[i];

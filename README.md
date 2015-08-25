@@ -4,6 +4,8 @@ A palette generation device :O
 Glad you asked, this thing makes colors.
 If you've ever used a Random object in Java, you will be instantly familiar with how to work these 7 algorithms (4, really... but 3 are reversible!).
 
+WHICH, by the way. Does NOT mean this has a random component. It doesnt. Thats not what this is.
+
 You make an instance of whatever algorithm you want out of the following:
 <pre>
 LinearGen

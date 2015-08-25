@@ -8,13 +8,14 @@ public class TestAlgs {
 	public static void main(String[] args) {
 
 		LinearGen L = new LinearGen();
-		String LB = "ff47a0";
+		String LB = "ff47af";
 		L.setBase(LB);
 		L.setPivot(2);
 		L.setStrength(60);
 		L.setSteps(4);
 		L.nextColors();
 		System.out.println("Linear\n" + L);
+		
 		
 		DistillGen D = new DistillGen();
 		String PB = "FF6464";

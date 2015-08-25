@@ -16,7 +16,6 @@ public class TestAlgs {
 		L.nextColors();
 		System.out.println("Linear\n" + L);
 		
-		
 		DistillGen D = new DistillGen();
 		String PB = "FF6464";
 		D.setBase(PB);

@@ -1,10 +1,25 @@
 body,html,section,main{
-  font-family: 'Martel', Times, 'Times New Roman', serif;
+  font-family: 'Montserrat', sans-serif;
   height: 100%;
+  min-height: 420px;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
+}
+
+h1,h2,h3{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cText{
+  text-align: center;
+}
+
+.rText{
+  text-align: right;
 }
 
 .fullHeight{
@@ -16,13 +31,43 @@ body,html,section,main{
 }
 
 .container{
+  flex-wrap: wrap;
   display: flex;
 }
 
+.verticalContainer{
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.grow{
+  flex: 1;
+}
+
+.grow4{
+  flex: 4;
+}
+
+.center{
+  align-items: center;
+  justify-content: center;
+}
+
+#header{
+  height: 20%;
+  min-height: 180px;
+}
+
 #menu{
+  width: 270px;
+  align-items: center;
+}
+
+.menuWidths{
   width: 250px;
 }
 
-#demo{
-  flex-grow: 1;
+.alg{
+  font-size: .7em;
 }

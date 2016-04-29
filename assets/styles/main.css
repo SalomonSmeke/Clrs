@@ -77,3 +77,8 @@ h1,h2,h3{
 #demo{
   min-width: 600px;
 }
+
+#algContainer{
+  min-width: 600px;
+  min-height: 400px;
+}

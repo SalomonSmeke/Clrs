@@ -18,6 +18,7 @@ function runEventLoop(loop){
 }
 
 var loadLoop = [{name:update,arg:"Linear"},{name:load,arg:""}];
-var data = ["#FFF","#AAA","#FFF","#666","#FFF"];
+var data = ["#fe4365","#cb4365","#984365","#654365","#324365"];
+
 
 $(document).ready(runEventLoop(loadLoop));

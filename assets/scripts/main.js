@@ -1,7 +1,7 @@
 "use strict";
 
 var load = function(){
-
+  //bindFunctionsToDom
 }
 
 var update = function(arg){

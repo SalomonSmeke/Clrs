@@ -52,10 +52,14 @@ var update = function(arg){
       data = generator.getGenerated();
       break;
     case "bridge":
+      dualGenerator.bridge();
+      data = dualGenerator.getGeneratedBridge();
   }
   d3.select("#algContainer").selectAll("div").style("background-color", function(d, i) {
     return "#"+data[i];
   });
+  document.getElementById("colorHigh").value = "#" + data[0];
+  document.getElementById("colorLow").value = "#" + data[4];
 }
 
 function runEventLoop(loop){
@@ -67,7 +71,20 @@ function runEventLoop(loop){
 
 var letsDoIt = function (arg){
   hi = document.getElementById("colorHigh").value;
+  while (hi.length>6){
+    hi = hi.substring(1,hi.length)
+  }
   lo = document.getElementById("colorLow").value;
+  while (lo.length>6){
+    lo = lo.substring(1,lo.length)
+  }
+  update(curr);
+}
+
+var change = function (arg){
+  if (arg == "linear" || arg == "linarr" || arg == "shade" || arg == "shader" || arg == "distil" || arg == "distillr" || arg == "bridge"){
+    curr = arg;
+  }
   update(curr);
 }
 

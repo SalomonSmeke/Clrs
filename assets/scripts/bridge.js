@@ -3,8 +3,8 @@ var generatedColors = [];
 var base0 = [255,255,255];
 var base1 = [255,255,255];
 
-var steps = 2;
-var strength = 100;
+var stepsbr = 5;
+var strengthbr = 100;
 
 function LWGenBridge() {
 }
@@ -38,7 +38,7 @@ LWGenBridge.prototype.getGeneratedBridge = function() {
   return generatedColors;
 };
 LWGenBridge.prototype.getBasesBridge = function() {
-  return [toHexBridge(base0,2),toHexBridge(base1,2)];
+  return [intsToColorBridge(base0),intsToColorBridge(base1)];
 };
 LWGenBridge.prototype.getStepsBridge = function() {
   return steps;
@@ -51,14 +51,14 @@ LWGenBridge.prototype.clearBridge = function() {
   generatedColors = [];
   base0 = [255,255,255];
   base1 = [255,255,255];
-  steps = 2;
+  stepsbr = 2;
   strength = 100;
 };
 
 function intervalsBridge(input, min) {
   var out = [];
   var delta = input-min;
-  for (var i = 0; i < steps; i++) out[i] = (input - ((delta*strength/100.0)/(steps-1))*i);
+  for (var i = 0; i < stepsbr; i++) out[i] = (input - ((delta*strengthbr/100.0)/(stepsbr-1))*i);
   return out;
 }
 
@@ -69,7 +69,7 @@ LWGenBridge.prototype.bridge = function(input) {
   var clrs1 = intervalsBridge(base0[1],base1[1]); //g ""
   var	clrs2 = intervalsBridge(base0[2],base1[2]); //b ""
 
-  for (var i = 0; i < steps; i++){
+  for (var i = 0; i < stepsbr; i++){
     generatedColors [i] = intsToColorBridge([clrs0[i],clrs1[i],clrs2[i]]);
   }
   return toString();
@@ -93,7 +93,7 @@ function toIntBridge(hex) {
   return parseInt(hex, 16);
 }
 function toHexBridge(decimal, minLength) {
-  var out = decimal.toString(16);
+  var out = decimal.toString(16).substring(0,2);
   while (out.length<minLength){
     out = "0" + out;
   }

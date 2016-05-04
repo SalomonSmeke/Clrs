@@ -267,7 +267,7 @@ function toInt(hex) {
   return parseInt(hex, 16);
 }
 function toHex(decimal, minLength) {
-  var out = decimal.toString(16);
+  var out = decimal.toString(16).substring(0,3);
   while (out.length<minLength){
     out = "0" + out;
   }

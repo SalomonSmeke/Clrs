@@ -3,7 +3,7 @@
 var generator;
 var dualGenerator;
 var curr, data;
-var lo = "12fa94";
+var lo = "194365";
 var hi = "fe4365";
 
 var load = function(){
@@ -11,7 +11,6 @@ var load = function(){
   generator.setSteps(5);
   generator.setStrength(90);
   dualGenerator = new LWGenBridge();
-  dualGenerator.setStepsBridge(5);
   $(".ch").submit(function(e){
     e.preventDefault();
     letsDoIt(true);
@@ -32,6 +31,7 @@ var update = function(arg){
       data = generator.getGenerated();
       break;
     case "linearr":
+      generator.setBaseS(lo);
       generator.linearR();
       data = generator.getGenerated();
       break;
@@ -40,6 +40,7 @@ var update = function(arg){
       data = generator.getGenerated();
       break;
     case "distillr":
+      generator.setBaseS(lo);
       generator.distillR();
       data = generator.getGenerated();
       break;
@@ -48,6 +49,7 @@ var update = function(arg){
       data = generator.getGenerated();
       break;
     case "shader":
+      generator.setBaseS(lo);
       generator.shadeR();
       data = generator.getGenerated();
       break;
@@ -59,6 +61,7 @@ var update = function(arg){
     return "#"+data[i];
   });
   document.getElementById("colorHigh").value = "#" + data[0];
+  console.log(data);
   document.getElementById("colorLow").value = "#" + data[4];
 }
 
@@ -78,14 +81,16 @@ var letsDoIt = function (arg){
   while (lo.length>6){
     lo = lo.substring(1,lo.length)
   }
+  if (curr != "bridge"){
+    if (!arg){
+      curr = curr+"r"
+    }
+  }
   update(curr);
 }
 
 var change = function (arg){
-  if (arg == "linear" || arg == "linarr" || arg == "shade" || arg == "shader" || arg == "distil" || arg == "distillr" || arg == "bridge"){
-    curr = arg;
-  }
-  update(curr);
+  update(arg);
 }
 
 var loadLoop = [{name:load,arg:""},{name:update,arg:"linear"}];
